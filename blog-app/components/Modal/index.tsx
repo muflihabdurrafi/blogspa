@@ -1,21 +1,13 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const Modal = ({ closeModal, modalType, cancelModal, user, setData }: any) => {
     const randomId = Math.floor(1000000 + Math.random() * 90000);
 
-    const [idUser, setIdUser] = useState(randomId);
-    const [nameUser, setNameUser] = useState("");
-    const [emailUser, setEmailUser] = useState("");
-    const [genderUser, setGenderUser] = useState("male");
-    const [statusUser, setStatusUser] = useState("active");
-
-    useEffect(() => {
-        setIdUser(user ? user.id : randomId);
-        setNameUser(user ? user.name : "");
-        setEmailUser(user ? user.email : "");
-        setGenderUser(user ? user.gender : "male");
-        setStatusUser(user ? user.status : "active");
-    }, []);
+    const [idUser, setIdUser] = useState(user ? user.id : randomId);
+    const [nameUser, setNameUser] = useState(user ? user.name : "");
+    const [emailUser, setEmailUser] = useState(user ? user.email : "");
+    const [genderUser, setGenderUser] = useState(user ? user.gender : "male");
+    const [statusUser, setStatusUser] = useState(user ? user.status : "active");
 
     return (
         <div className="w-[100vw] h-[100vw] bg-slate-700/70 fixed flex justify-center">
