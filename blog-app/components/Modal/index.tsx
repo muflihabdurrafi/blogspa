@@ -9,18 +9,13 @@ const Modal = ({ closeModal, modalType, cancelModal, user, setData }: any) => {
     const [genderUser, setGenderUser] = useState("male");
     const [statusUser, setStatusUser] = useState("active");
 
-    if (modalType !== "Edit") {
-        return;
-    } else {
-        useEffect(() => {
-            setIdUser(user.id);
-            setNameUser(user.name);
-            setEmailUser(user.email);
-            setGenderUser(user.gender);
-            setStatusUser(user.status);
-        }, [user]);
+    if (modalType == "Edit") {
+        setIdUser(user.id);
+        setNameUser(user.name);
+        setEmailUser(user.email);
+        setGenderUser(user.gender);
+        setStatusUser(user.status);
     }
-
     return (
         <div className="w-[100vw] h-[100vw] bg-slate-700/70 fixed flex justify-center">
             <div className="w-[500px] h-[400px] rounded-xl bg-white shadow-xl flex flex-col p-[25px] mt-20">
