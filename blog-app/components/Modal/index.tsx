@@ -9,7 +9,9 @@ const Modal = ({ closeModal, modalType, cancelModal, user, setData }: any) => {
     const [genderUser, setGenderUser] = useState("male");
     const [statusUser, setStatusUser] = useState("active");
 
-    modalType == "Edit" &&
+    if (modalType !== "Edit") {
+        return;
+    } else {
         useEffect(() => {
             setIdUser(user.id);
             setNameUser(user.name);
@@ -17,6 +19,7 @@ const Modal = ({ closeModal, modalType, cancelModal, user, setData }: any) => {
             setGenderUser(user.gender);
             setStatusUser(user.status);
         }, [user]);
+    }
 
     return (
         <div className="w-[100vw] h-[100vw] bg-slate-700/70 fixed flex justify-center">
