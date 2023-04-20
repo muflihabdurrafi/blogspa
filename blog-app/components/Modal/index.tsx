@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const Modal = ({ closeModal, modalType, cancelModal, user, setData }: any) => {
     const randomId = Math.floor(1000000 + Math.random() * 90000);
