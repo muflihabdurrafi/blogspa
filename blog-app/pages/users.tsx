@@ -1,6 +1,8 @@
 import Layout from "@/components/Layout";
-import Modal from "@/components/Modal";
+import dynamic from "next/dynamic";
 import { useState } from "react";
+
+const Modal = dynamic(() => import("@/components/Modal"));
 
 interface User {
     id: number;
