@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Modal = ({ closeModal, modalType, cancelModal, user, setData }: any) => {
     const randomId = Math.floor(1000000 + Math.random() * 90000);
@@ -9,13 +9,14 @@ const Modal = ({ closeModal, modalType, cancelModal, user, setData }: any) => {
     const [genderUser, setGenderUser] = useState("male");
     const [statusUser, setStatusUser] = useState("active");
 
-    if (modalType == "Edit") {
-        setIdUser(user.id);
-        setNameUser(user.name);
-        setEmailUser(user.email);
-        setGenderUser(user.gender);
-        setStatusUser(user.status);
-    }
+    useEffect(() => {
+        setIdUser(user ? user.id : randomId);
+        setNameUser(user ? user.name : "");
+        setEmailUser(user ? user.email : "");
+        setGenderUser(user ? user.gender : "male");
+        setStatusUser(user ? user.status : "active");
+    }, []);
+
     return (
         <div className="w-[100vw] h-[100vw] bg-slate-700/70 fixed flex justify-center">
             <div className="w-[500px] h-[400px] rounded-xl bg-white shadow-xl flex flex-col p-[25px] mt-20">
