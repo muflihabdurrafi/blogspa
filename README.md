@@ -22,7 +22,7 @@ git clone https://github.com/muflihabdurrafi/blogspa.git
 # go to clone folder
 cd blogspa/blog-app
 
-#  install all dependency
+#  install all dependencies
 
 npm install
 # or
