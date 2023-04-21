@@ -20,8 +20,12 @@ npm install
 yarn install
 # or
 pnpm install
+```
 
-#  install all dependency
+### Run App
+
+```bash
+#  run on your local server
 
 npm run dev
 # or
