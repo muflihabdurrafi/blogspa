@@ -39,7 +39,13 @@ const BlogDetail = (props: PostDetailProps) => {
         <Layout pageTitle="Blog Detail">
             <div className="px-4 lg:px-60 sm:px-10 py-20">
                 <div>
-                    <Link href="/blog">Back</Link>
+                    <Link href="/blog">
+                        <button className="  hover:opacity-100 opacity-50 border border-black transition-all ease-in w-16 h-10 rounded-md m-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 m-auto">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
+                            </svg>
+                        </button>
+                    </Link>
                 </div>
                 <h1 className="text-center font-bold text-4xl">Blog Detail Page</h1>
                 <div className="my-10 shadow-xl rounded-xl py-2 px-5 border">
