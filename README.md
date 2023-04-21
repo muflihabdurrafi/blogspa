@@ -13,6 +13,10 @@ Blog Single Page App using Next JS with Typescript and TailwindCSS
 
 ## How to run the application
 
+You can access the deployed app from vercel: https://blogspa-dusky.vercel.app/
+
+or follow the instructions below
+
 ### Installation
 
 ```bash
