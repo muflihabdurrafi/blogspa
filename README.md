@@ -1,6 +1,15 @@
 # Blog Single Page Application
 
-Blog Single Page App using Next JS
+Blog Single Page App using Next JS with Typescript and TailwindCSS
+
+## Features
+
+-   Blog list with pagination.
+-   Blog detail with user and comment section.
+-   Users' table with add, edit, and delete.
+-   Search users by name from Users' table.
+-   Responsive.
+-   Using server side rendering, state management, and no errors.
 
 ## How to run the application
 
