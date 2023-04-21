@@ -26,10 +26,6 @@ const Blog = (props: blogProps) => {
     const pageCount = Math.ceil(postsData.length / postsPerPage);
 
     const changePage = ({ selected }: any) => {
-        // let current = localStorage.getItem("PageNumber") ? localStorage.getItem("PageNumber") : localStorage.setItem("PageNumber", selected);
-        // let history = localStorage.getItem("PageNumber") ? localStorage.getItem("PageNumber") : localStorage.setItem("PageNumber", current);
-        // console.log(history);
-        // setPageNumber(history);
         setPageNumber(selected);
     };
 
@@ -42,7 +38,7 @@ const Blog = (props: blogProps) => {
                 }}
                 className="bg-gray-400 w-[300px] rounded-lg m-10 drop-shadow-2xl outline outline-slate-300 cursor-pointer"
             >
-                <Image src="/logo.png" width={300} height={300} alt="image" />
+                <Image src="/logo.png" width={300} height={300} alt="image" priority />
                 <div className="p-5">
                     <h1 className="font-bold text-xl">{p.title && p.title.slice(0, 40) + "..."}</h1>
                     <p className="font-thin text-sm">Publisher ID: {p.user_id}</p>
@@ -59,6 +55,7 @@ const Blog = (props: blogProps) => {
                 <h1 className="text-center font-bold text-4xl">Blog List Page</h1>
                 <div className="flex justify-center flex-wrap">{displayPosts}</div>
                 <ReactPaginate
+                    initialPage={pageNumber}
                     previousLabel={"Prev"}
                     nextLabel={"Next"}
                     pageCount={pageCount}

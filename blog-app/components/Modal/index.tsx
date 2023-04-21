@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const Modal = ({ closeModal, modalType, cancelModal, user, setData }: any) => {
-    const randomId = Math.floor(1000000 + Math.random() * 90000);
+    const randomId = Math.floor(1000000 + Math.random() * 900000);
 
     const [idUser, setIdUser] = useState(user ? user.id : randomId);
     const [nameUser, setNameUser] = useState(user ? user.name : "");

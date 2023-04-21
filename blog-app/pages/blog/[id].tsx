@@ -1,4 +1,6 @@
 import Layout from "@/components/Layout";
+import Link from "next/link";
+import { withRouter } from "next/router";
 
 interface PostDetail {
     id: number;
@@ -36,6 +38,9 @@ const BlogDetail = (props: PostDetailProps) => {
     return (
         <Layout pageTitle="Blog Detail">
             <div className="px-4 lg:px-60 sm:px-10 py-20">
+                <div>
+                    <Link href="/blog">Back</Link>
+                </div>
                 <h1 className="text-center font-bold text-4xl">Blog Detail Page</h1>
                 <div className="my-10 shadow-xl rounded-xl py-2 px-5 border">
                     <h1 className="font-extralight md:text-sm text-xs">ID Post : {post.id}</h1>
@@ -92,11 +97,8 @@ const BlogDetail = (props: PostDetailProps) => {
 export async function getServerSideProps(context: any) {
     const { id } = context.params;
     const [resPost, resComments, resUsers] = await Promise.all([fetch(`https://gorest.co.in/public/v2/posts/${id}`), fetch("https://gorest.co.in/public/v2/comments"), fetch("https://gorest.co.in/public/v2/users")]);
-    // const resPost = await fetch(`https://gorest.co.in/public/v2/posts/${id}`);
-    // const resComments = await fetch("https://gorest.co.in/public/v2/comments");
+
     const [post, comments, users] = await Promise.all([resPost.json(), resComments.json(), resUsers.json()]);
-    // const post = await resPost.json();
-    // const comments = await resComments.json();
     return {
         props: {
             post,
