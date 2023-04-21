@@ -17,7 +17,7 @@ Blog Single Page App using Next JS with Typescript and TailwindCSS
 
 ```bash
 #  clone the repository
-git clone  https://github.com/muflihabdurrafi/blogspa.git
+git clone https://github.com/muflihabdurrafi/blogspa.git
 
 # go to clone folder
 cd blogspa/blog-app
@@ -44,3 +44,5 @@ pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+> Disclaimer: I apologise in advance for the messy code, this is my first time building an app using next js and also typesrcipt. I am fairly new to react as well 🙏
